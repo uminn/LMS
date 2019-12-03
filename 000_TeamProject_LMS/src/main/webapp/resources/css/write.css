@@ -1,0 +1,111 @@
+@import url("main_menu.css");
+@import url("button.css");
+/**************************************/
+table.type05 {
+    border-collapse: separate;
+    border-spacing: 1px;
+    text-align: left;
+    line-height: 2.5;
+    border-top: 1px solid #DFDEF8;
+    margin: 20px -131px;
+}
+table.type05 th {
+    width: 150px;
+    padding: 10px;
+    font-weight: bold;
+    vertical-align: top;
+    border-bottom: 1px solid #DFDEF8;
+    background: #DFDEF8;
+}
+table.type05 td {
+    width: 350px;
+    padding: 10px;
+    vertical-align: top;
+    border-bottom: 1px solid #DFDEF8;
+}
+header{
+    width: 1707px;
+    height: 80px;
+}
+.writetxt{
+    height: 30px;
+}
+input[type="text"]{
+    border:none;
+    background: transparent;
+    border-bottom: 1px solid silver;
+    outline: none;
+    text-align: center;
+}
+textarea{
+    outline: none;
+    border: 1px solid #DFDEF8;
+    background: transparent;
+    font-size: 15px;
+}
+/***************************************************/
+#lpTopTable{
+    margin-left: 690px;
+}
+#sectionMidContent{
+    margin: 20px auto;
+    width: 700px;
+    height: 250px;
+}
+.lpMidQ{
+    background-color:  #e1e7ed;
+    float: left;
+    width: 150px;
+    height:100px;
+    font-weight: bold;
+    text-align: center;
+    border: 1px solid #c8d3df;
+    color: #2865a7;
+    line-height: 100px;
+}
+
+.lpMidA{
+    float: left;
+    width: 540px;
+    height: 100px;
+    text-align: center;
+    border: 1px solid #c8d3df;
+    /* overflow:scroll; */
+}
+#plan_save,#plan_modify,#plan_write{
+    border-radius: 0px;
+    width: 80px;
+    height: 30px;
+    float: right;
+}
+.ui-datepicker-trigger{
+    display: none;
+}
+.datepicker2{
+    width: 200px;
+}
+/****************************************/
+.lecture_title{
+    width: 200px;
+    text-align: center;
+    background: #DFDEF8;
+    border-right: 1px solid silver;
+}
+.lecturetxt{
+    width: 120px;
+}
+.lecture_title:last-child,
+.lecturetxt01:last-child{
+    border-right: none;
+}
+.lecturetxt01{
+    border-right: 1px solid silver;
+}
+#plan_content .plan_title{
+    width: 70px;
+    text-align: center;
+    background: #DFDEF8;
+}
+table#plan_content{
+    width: 890px;
+}

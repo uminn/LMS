@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.human.finalpjt.dao.LectureDao">
+	<select id="show_lecinfo" resultType="com.human.finalpjt.dto.EnrollDto">
+		select a.t_year as t_year,
+		a.t_semester as t_semester,
+		a.t_day as t_day, a.t_time as t_time,
+		a.t_room as t_room,
+		a.t_max as
+		t_max, b.c_name as c_name, b.c_major as
+		c_major, b.c_unit as c_unit
+		from teach a, course b where a.c_id = b.c_id and p_id = #{param1} and a.t_semester = #{param2}
+	</select>
+
+	<insert id="insert_lecweek">
+		insert into lectureplan
+		values(#{param1},#{param2},#{param3},#{param4},#{param5},
+				#{param6},#{param7},#{param8},#{param9},#{param10},
+				#{param11},#{param12},#{param13},#{param14},#{param15},#{param16},#{param17})
+	</insert>
+	
+	<insert id="insert_lecgrade">
+		insert into lecturegrade
+		values(#{param1}, #{param2, jdbcType=INTEGER},#{param3, jdbcType=INTEGER},#{param4, jdbcType=INTEGER},#{param5, jdbcType=INTEGER},#{param6, jdbcType=INTEGER})
+	</insert>
+	
+	<insert id="insert_lecdate">
+		insert into lecturedate
+		values(#{param1},#{param2},#{param3},#{param4},#{param5})
+	</insert>
+	
+	<select id="show_leclist" resultType="com.human.finalpjt.dto.LectureDto">
+		select *
+		from lectureplan, lecturegrade, lecturedate
+		where lec_no = #{param1} and lec_gradeno = #{param2} and lec_dateno = #{param3}
+	</select>
+	
+	<select id="get_lecnum" resultType="java.lang.Integer">
+		select t_lec_no from teach where p_id = #{param1} and t_year = #{param2} and t_semester = #{param3}
+	</select>
+	
+	<update id = "modify_lecweek">
+		update lectureplan set lec_week1 = #{param2}, lec_week2 = #{param3}, lec_week3 = #{param4}, lec_week4 = #{param5}, lec_week5 = #{param6}, 
+							   lec_week6 = #{param7}, lec_week7 = #{param8}, lec_week8 = #{param9}, lec_week9 = #{param10}, lec_week10 = #{param11}, 
+							   lec_week11 = #{param12}, lec_week12 = #{param13}, lec_week13 = #{param14}, lec_week14 = #{param15}, lec_week15 = #{param16}, lec_book = #{param17} where lec_no = #{param1}
+	</update>
+	
+	<update id = "modify_lecgrade">
+		update lecturegrade set lec_mid = #{param2}, lec_final = #{param3}, lec_homework = #{param4}, lec_active = #{param5}, lec_attendance = #{param6} where lec_gradeno = #{param1}
+	</update>
+	
+	<update id = "modify_lecdate">
+		update lecturedate set lec_middate = #{param2}, lec_middatefrom = #{param3}, lec_finaldate = #{param4}, lec_finaldatefrom = #{param5} where lec_dateno = #{param1}
+	</update>
+</mapper>

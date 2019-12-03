@@ -1,0 +1,60 @@
+@import url("student.css");
+@import url("main_menu.css");
+@import url("button.css");
+@import url("enroll.css");
+/****************************************************************************/
+#wrap{
+    width: 1260px;
+    height: auto;
+    margin: 0 auto;
+    line-height: 30px;
+}
+
+#enroll-info{
+    float: right;
+    margin-right: 140px;
+}
+#enroll-input{
+    border-radius: 0px;
+    height: 30px;
+}
+#enroll-board{
+    margin: 0 auto;
+    width: 1111px;
+}
+#info{
+    width: 82px;
+    height: 34px;
+    margin-left: 2px;
+}
+
+#board ul li{
+    float: left;
+    width: 197px;
+    height: 35px;
+    text-align: center;
+    margin-top: 10px;
+    line-height: 36px;
+    border-bottom: 1px solid silver;
+}
+
+#board ul li:nth-child(1){ width: 80px; }
+#board ul li:nth-child(2){ width: 490px; }
+#board ul li:nth-child(3){ width: 120px; }
+#board ul li:nth-child(4){ width: 177px; }
+#board ul li:nth-child(5){ width: 165px; }
+#board li:nth-child(5){ font-size: 16px; }
+
+#paging{
+    width: 1031px;
+    margin-left: 74px;
+}
+#paging ul{
+    margin: 0 auto;
+    width: 150px;
+    height: 27px;
+}
+#paging ul li{
+    float: left;
+    text-align: center;
+}

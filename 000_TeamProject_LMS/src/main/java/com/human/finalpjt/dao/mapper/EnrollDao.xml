@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.human.finalpjt.dao.EnrollDao">
+	<select id="showList" resultType="com.human.finalpjt.dto.EnrollDto">
+		select a.c_id as c_id, a.c_id_no as c_id_no, b.c_major as c_major, b.c_name as c_name, b.c_unit as c_unit,a.p_id as p_id,
+		c.p_name as p_name, b.c_grade as c_grade, a.t_max as t_max, a.t_day as t_day, a.t_time as t_time, a.t_room as t_room,
+		(select count(*) from enroll d where e_year=#{param1} and e_semester=#{param2} and c_id=a.c_id) as sNum
+		from teach a, course b, professor c
+		where a.c_id = b.c_id and a.p_id=c.p_id and a.t_year=#{param1} and a.t_semester=#{param2}
+		<if test="param3!=''">
+			and b.c_major=#{param3}
+		</if>
+		<if test="param5!=0">
+			and b.c_grade=#{param5}
+		</if>
+
+	</select>
+	<select id="showList2" resultType="com.human.finalpjt.dto.EnrollDto">
+		select a.p_id p_id from teach a, course b, professor c
+		where a.c_id = b.c_id and a.p_id=c.p_id and a.t_year=#{param1} and a.t_semester=#{param2}
+		<if test="param3!=''">
+			and b.c_major=#{param3}
+		</if>
+		<if test="param5!=0">
+			and b.c_grade=#{param5}
+		</if>
+	</select>
+	<select id="possibleMajorStudent" resultType="java.lang.String">
+		select distinct s_major as s_major from student
+	</select>	
+	<select id="possibleMajorProfessor" resultType="java.lang.String">
+		select distinct p_major as p_major from professor
+	</select>	
+	
+	<select id="showMyApply" resultType="com.human.finalpjt.dto.EnrollDto">
+		select a.c_id as c_id, a.c_id_no as c_id_no, b.c_major as c_major, b.c_name as c_name, b.c_unit as c_unit, 
+		c.p_name as p_name, b.c_grade as c_grade, a.t_max as t_max, a.t_day as t_day, a.t_time as t_time, a.t_room as t_room,
+		(select count(*) from enroll where e_year=#{param2} and e_semester=#{param3} and c_id=a.c_id) as sNum 
+		from teach a, course b, professor c, enroll d, student e
+		where e.s_id=#{param1} and d.s_id=e.s_id and a.c_id = b.c_id and b.c_id = d.c_id and a.p_id=c.p_id  
+        and a.t_year=#{param2} and a.t_year = d.e_year and a.t_semester=#{param3} and a.t_semester = d.e_semester
+	</select>
+	<select id="showAllMyApply" resultType="com.human.finalpjt.dto.EnrollDto">
+		select a.c_id as c_id, a.c_id_no as c_id_no, b.c_major as c_major, b.c_name as c_name, b.c_unit as c_unit, 
+		c.p_name as p_name, b.c_grade as c_grade, a.t_max as t_max, a.t_day as t_day, a.t_time as t_time, a.t_room as t_room, a.t_year as t_year, a.t_semester as t_semester,
+		(select count(*) from enroll where c_id=a.c_id) as sNum 
+		from teach a, course b, professor c, enroll d, student e
+		where e.s_id=#{param1} and d.s_id=e.s_id and a.c_id = b.c_id and b.c_id = d.c_id and a.p_id=c.p_id  
+        and a.t_year = d.e_year and a.t_semester = d.e_semester order by t_year,t_semester desc
+	
+	</select>
+	<insert id="insertMyApply">
+		insert into enroll(s_id,c_id,c_id_no,e_year,e_semester) values(#{param1},#{param2},#{param3},#{param4},#{param5})
+	</insert>
+	
+	<delete id="deleteMyApply">
+		delete from enroll where s_id=#{param1} and e_year=#{param2} and e_semester=#{param3} and c_id=#{param4}	
+	</delete>
+	
+	<select id="sumMyApplyUnit" resultType="java.lang.Integer">
+		select nvl(sum(b.c_unit),0) as sum from enroll a, course b where a.c_id=b.c_id and s_id=#{param1} and e_year=#{param2} and e_semester=#{param3} 
+	</select>
+	<select id="getStudentInfo" resultType="com.human.finalpjt.dto.StudentDto">
+		select * from student where s_id=#{param1}
+	</select>
+	<select id="getProfessorInfo" resultType="com.human.finalpjt.dto.ProfessorDto">
+		select * from professor where p_id=#{param1}
+	</select>
+	<select id="getAdminInfo" resultType="com.human.finalpjt.dto.AdminDto">
+		select * from administer where a_id=#{param1}
+	</select>
+	
+	
+	
+	
+</mapper>

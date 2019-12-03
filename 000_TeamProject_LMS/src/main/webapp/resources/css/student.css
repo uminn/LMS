@@ -1,0 +1,15 @@
+/*student_공통*/
+legend{ margin-left: 25px; }
+section{ margin-left: 200px; }
+input {
+    width: 185px;
+    height: 42px;
+    padding-left: 15px;
+    border-radius: 42px;
+    outline: none;
+}
+#info_title{
+    font-size: 20px;
+    background-color: #f3eef0;
+    font-family: 'Noto Sans KR', sans-serif;
+}

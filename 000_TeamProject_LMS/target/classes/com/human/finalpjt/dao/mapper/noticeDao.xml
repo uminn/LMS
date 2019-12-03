@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.human.finalpjt.dao.noticeDao">
+	<!-- 게시글 목록(list.jsp) 마이바티스에서는 부등호가 닫힌태그로 인식해서 저렇게 해주어야해용 쓰는 문법!!-->
+	<select id = "list" resultType = "com.human.finalpjt.dto.ContentDto">
+		select * from notice where bno<![CDATA[<=]]>20 and bno<![CDATA[>=]]>1 order by bno desc
+	</select>
+	
+	<!-- 게시글 목록 갯수(list.jsp) -->
+	<select id = "count" resultType="int">
+		select count(*) as count from notice
+	</select>
+	
+	<!-- 게시글 등록(writer_page.jsp) -->
+	<insert id = "write" parameterType="com.human.finalpjt.dto.ContentDto">
+		insert into notice (bno, btitle, bcontent, bname, bdate, bhit) values (#{param1}, #{param2}, #{param3}, #{param4}, sysdate, 0)
+		<selectKey resultType="Integer" order="AFTER" keyProperty="bno">
+			select max(bno) as bno from notice
+		</selectKey>
+	</insert>
+	
+	<!-- 게시판 번호를 위한 시퀀스 -->
+	<select id="selectSequence" resultType="integer">
+		select board_seq.nextval from dual
+	</select>
+	<!-- 파일 -->
+	<insert id="writeFile">
+		insert into files (bno,bfile, bfilename) values (#{param1},#{param2, jdbcType=VARCHAR}, #{param3, jdbcType=VARCHAR})
+	</insert>
+	
+	<!-- 게시글 상세보기(view.jsp) -->
+	<select id = "viewDao" resultType = "com.human.finalpjt.dto.ContentDto">
+		select * from notice where bno = #{param1}
+	</select>
+	<!-- 게시글 상세보기 파일(view.jsp) -->
+	<select id = "viewfileDao" resultType = "com.human.finalpjt.dto.ContentDto">
+		select * from files where bno = #{param1}
+	</select>
+	
+	<!-- 조회수 -->
+	<update id = "upHit">
+		update notice set bhit = bhit + 1 where bno = #{param1}
+	</update>
+	
+	<!-- 파일 로드  -->
+	<select id = "pathSearch" resultType = "java.lang.String">
+		select nvl(bfile, 'nofile') from files where bno = #{param1}
+	</select>
+	<!-- 파일 다운로드  -->
+	<select id = "pathSearch2" resultType = "java.lang.String">
+		select bfile from files where bfilename = #{param1}
+	</select>
+	
+	
+	<select id = "loadFileName" resultType="java.lang.String">
+		select bfilename from files where bno = #{param1}
+	</select>
+	
+	<!-- 게시글 수정(modify_page.jsp에서 처리되는 문) -->
+	<update id = "modify">
+		update notice set btitle = #{param2}, bcontent = #{param3} where bno = #{param1}
+	</update>
+	<insert id = "modifyFile">
+		insert into files (bno,bfile, bfilename) values (#{param1},#{param2, jdbcType=VARCHAR}, #{param3, jdbcType=VARCHAR})
+	</insert>
+	
+	<!-- 게시글 수정(modify_page.jsp에서 처리되는 문) -->
+	<delete id = "delete">
+		delete from notice where bno = #{param1}
+	</delete>
+	<delete id = "deleteFile">
+		delete from files where bno = #{param1}
+	</delete>
+	<!-- 게시글 수정페이지 파일 아이디값 -->
+	<select id="rownums" resultType="java.lang.Integer">
+		select rownum from files where bno=#{param1} order by rownum
+	</select>
+	<!-- 게시글 수정페이지 삭제할 파일 아이디값 선택 -->
+	<!-- <select id="pickRownum" resultType="java.lang.String">
+		select * from (select rownum rn,bno,bfilename from files) where bno=#{param1} and rn=#{param2}  order by rn
+	</select> -->
+	
+	<!-- 게시글안 첨부파일 갯수 카운트 -->
+	<select id="fileCount" resultType="int">
+		select count(*) count from files where bno=#{param1} and bfilename is not null
+	</select>
+	
+	<!-- 선택 후 삭제 -->
+	<delete id="deleteFileInModify">
+		delete from files where bno=#{param1} and bfilename=#{param2}		
+	</delete>
+	<!-- 페이징 버튼 -->
+	<select id="paging" resultType="com.human.finalpjt.dto.ContentDto">
+		select bno,btitle,bname,bdate,bhit from (select rownum rn,bno,btitle,bname,bdate,bhit from (select bno,btitle,bname,bdate,bhit from notice order by bno desc)) where rn between #{param1} and ${param2}
+	</select>
+	<!-- 페이징 번호 -->
+	<select id="numberPaging" resultType="com.human.finalpjt.dto.ContentDto">
+		select bno,btitle,bname,bdate,bhit from (select rownum rn,bno,btitle,bname,bdate,bhit from (select bno,btitle,bname,bdate,bhit from notice order by bno desc)) where rn between #{param1} and ${param2}
+	</select>
+	<!-- 페이징 번호를 위한 카운트 -->
+	<select id="pagingCount" resultType="int">
+		select count(*)/10 count from notice
+	</select>
+	<!-- **************************************************************************** -->
+	<!-- 게시판 검색 전체 -->
+	<!-- 게시판 검색1 -->
+	<select id="boardSearch1" resultType="com.human.finalpjt.dto.ContentDto">
+		select * from notice where btitle like #{param1} or bcontent like #{param2} order by bno desc
+	</select>
+	<select id="boardSearch1_1" resultType="int">
+		select count(*) count from notice where btitle like #{param1} or bcontent like #{param2} order by bno desc
+	</select>
+	<!-- 게시판 검색2 -->
+	<select id="boardSearch11" resultType="com.human.finalpjt.dto.ContentDto">
+		select * from notice where btitle like #{param1} or btitle like #{param2} or bcontent like #{param3} or bcontent like #{param4} order by bno desc
+	</select>
+	<select id="boardSearch2_1" resultType="int">
+		select count(*) count from notice where btitle like #{param1} or btitle like #{param2} or bcontent like #{param3} or bcontent like #{param4} order by bno desc
+	</select>
+	<!-- 게시판 검색3 -->
+	<select id="boardSearch111" resultType="com.human.finalpjt.dto.ContentDto">
+		select * from notice where btitle like #{param1} or btitle like #{param2} or btitle like #{param3} or bcontent like #{param4} or bcontent like #{param5} or bcontent like #{param6} order by bno desc
+	</select>
+	<select id="boardSearch3_1" resultType="int">
+		select count(*) count from notice where btitle like #{param1} or btitle like #{param2} or btitle like #{param3} or bcontent like #{param4} or bcontent like #{param5} or bcontent like #{param6} order by bno desc
+	</select>
+	
+	<!-- **************************************************************************** -->
+	<!-- 게시판 검색 제목 -->
+	<!-- 게시판 검색2 -->
+	<select id="boardSearch2" resultType="com.human.finalpjt.dto.ContentDto">
+		select * from notice where bcontent like #{param1}  order by bno desc
+	</select>
+	<select id="boardSearch1_2" resultType="int">
+		select count(*) count from notice where bcontent like #{param1} order by bno desc
+	</select>
+	<!-- 게시판 검색2 -->
+	<select id="boardSearch22" resultType="com.human.finalpjt.dto.ContentDto">
+		select * from notice where bcontent like #{param1} or bcontent like #{param2} order by bno desc
+	</select>
+	<select id="boardSearch2_2" resultType="int">
+		select count(*) count from notice where bcontent like #{param1} or bcontent like #{param2} order by bno desc
+	</select>
+	<!-- 게시판 검색3 -->
+	<select id="boardSearch222" resultType="com.human.finalpjt.dto.ContentDto">
+		select * from notice where bcontent like #{param1} or bcontent like #{param2} or bcontent like #{param3} order by bno desc
+	</select>
+	<select id="boardSearch3_2" resultType="int">
+		select count(*) count from notice where bcontent like #{param1} or bcontent like #{param2} or bcontent like #{param3} order by bno desc
+	</select>
+	<!-- **************************************************************************** -->
+	<!-- 게시판 검색 내용 -->
+	<!-- 게시판 검색3 -->
+	<select id="boardSearch3" resultType="com.human.finalpjt.dto.ContentDto">
+		select * from notice where btilte like #{param1}  order by bno desc
+	</select>
+	<select id="boardSearch1_3" resultType="int">
+		select count(*) count from notice where btilte like #{param1} order by bno desc
+	</select>
+	<!-- 게시판 검색2 -->
+	<select id="boardSearch33" resultType="com.human.finalpjt.dto.ContentDto">
+		select * from notice where btilte like #{param1} or btitle like #{param2} order by bno desc
+	</select>
+	<select id="boardSearch2_3" resultType="int">
+		select count(*) count from notice where btilte like #{param1} or btitle like #{param2} order by bno desc
+	</select>
+	<!-- 게시판 검색3 -->
+	<select id="boardSearch333" resultType="com.human.finalpjt.dto.ContentDto">
+		select * from notice where btilte like #{param1} or btitle like #{param2} or btitle like #{param3} order by bno desc
+	</select>
+	<select id="boardSearch3_3" resultType="int">
+		select count(*) count from notice where btilte like #{param1} or btitle like #{param2} or btitle like #{param3} order by bno desc
+	</select>
+	<!-- **************************************************************************** -->
+</mapper>

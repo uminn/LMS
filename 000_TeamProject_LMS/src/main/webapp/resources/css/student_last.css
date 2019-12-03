@@ -1,0 +1,93 @@
+@import url("student.css");
+@import url("main_menu.css");
+@import url("button.css");
+.input-field1 {
+    text-align: center;
+    height: 31px;
+    margin-left: 13px;
+    padding-left: 0px;
+}
+hr { width: 1592px; }
+/********************************************************************/
+#last_main{
+    width: 1730px;
+    height: auto;
+    margin-top: 100px;
+    position: fixed;
+}
+#tab1{
+    padding: 0px;
+    width: 1677px;
+    margin: 10px;
+}
+.last_title1 ul li{
+    float: left;
+    width: 420px;
+    height: 40px;
+    line-height: 35px;
+    margin-top: 15px;
+    text-align: center;
+}
+.last_title1 ul li:nth-child(1){ width: 315px; }
+.last_title1 ul li:nth-child(2){ width: 23%; }
+.last_title1 ul li:nth-child(3){ width: 15%; }
+.last_title1 ul li:nth-child(4){ width: 27%; }
+.last_title1 ul li:nth-child(5){ width: 17%; }
+.last_title1 ul li:nth-child(6){ width: 28%; }
+
+.last_content1 ul li{
+    float: left;
+    width: 763px;
+    height: 40px;
+    line-height: 35px;
+    text-align: center;
+}
+
+.last_content2 ul li{
+    float: left;
+    width: 190px;
+    height: 40px;
+    line-height: 35px;
+    text-align: center;
+}
+.last_content2 ul li:nth-child(5),
+.last_content2 ul li:nth-child(6),
+.last_content2 ul li:nth-child(7),
+.last_content2 ul li:nth-child(8){
+    float: left;
+    width: 207px;
+    height: 40px;
+    line-height: 35px;
+    text-align: center;
+}
+.last_content2 ul li:nth-child(4){ width: 190px; }
+
+.last_content3 ul li{
+    float: left;
+    width: 190px;
+    height: 40px;
+    line-height: 35px;
+    text-align: center;
+}
+.last_content3 ul li:nth-child(5),
+.last_content3 ul li:nth-child(6),
+.last_content3 ul li:nth-child(7),
+.last_content3 ul li:nth-child(8){
+    width: 207px;
+    border-right: 1px solid silver;
+}
+.last_content1 ul li:nth-child(1),
+.last_content2 ul li:nth-child(1),
+.last_content2 ul li:nth-child(2),
+.last_content2 ul li:nth-child(3),
+.last_content2 ul li:nth-child(4),
+.last_content2 ul li:nth-child(5),
+.last_content2 ul li:nth-child(6),
+.last_content2 ul li:nth-child(7),
+.last_content2 ul li:nth-child(8),
+.last_content3 ul li:nth-child(1),
+.last_content3 ul li:nth-child(2),
+.last_content3 ul li:nth-child(3),
+.last_content3 ul li:nth-child(4){
+    border-right: 1px solid silver;
+}

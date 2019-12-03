@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.human.finalpjt.dao.InterDao">
+	<select id="viewDao"
+		resultType="com.human.finalpjt.dto.InterDto">
+		select a.s_id as s_id, d.s_name as s_name, d.s_major as s_major, a.c_id as c_id,
+		 c.c_name as c_name, c.c_major as c_major, a.e_year as e_year, a.e_semester as e_semester,
+		b.t_day as t_day, b.t_time as t_time, b.t_room as t_room, a.c_score as c_score, a.c_alpha as c_alpha, a.c_rank as c_rank
+		from enroll a, teach b, course c, student d
+		where a.c_id = b.c_id and b.p_id=#{param1} and b.c_id = c.c_id and a.s_id = d.s_id 
+		and e_year=#{param2} and a.e_semester = b.t_semester and a.e_semester =#{param3}
+	</select>
+  
+	<select id="searchDao"
+		resultType="com.human.finalpjt.dto.searchdto">
+		select c.c_name as c_name, a.c_id as c_id, a.t_day<![CDATA[ || ]]>'
+		'<![CDATA[ || ]]>a.t_time
+		as con_sum, a.t_room as t_room from
+		teach a, professor b, course c
+		where a.p_id = b.p_id and a.c_id =
+		c.c_id and a.p_id =#{param1, jdbcType=VARCHAR}
+	</select>
+
+	<insert id="InsertDao">
+		insert into st_grade(st_id,st_name,st_c_name,st_major) values(#{param1},#{param2},#{param3},#{param4})
+	</insert>
+	
+	<select id="schlist" resultType = "com.human.finalpjt.dto.scheduleDto">
+      select * from schedule order by sch_fromdate
+   </select>
+   <select id="schlistAfterToday" resultType = "com.human.finalpjt.dto.scheduleDto">
+     <![CDATA[   select * from schedule where sch_fromdate >= (sysdate-1) order by sch_fromdate ]]>
+   </select>
+   
+   <insert id="schInsert">
+      insert into schedule(sch_no, sch_fromdate, sch_todate, sch_content) values(sch_seq.nextval-1, #{param1}, #{param2}, #{param3})
+   </insert>
+   
+   <update id="schUpdate">
+   		update schedule set sch_fromdate=#{param2}, sch_todate=#{param3}, sch_content=#{param4} where sch_no=#{param1}  
+   </update>
+   <!-- 학사일정 목록 갯수(list.jsp) -->
+   <select id="count" resultType="int">
+      select count(*) as count from schedule
+   </select> 
+   
+   	<select id="sumDao" resultType="com.human.finalpjt.dto.sumDto">
+		select c_name, sumhap from avgtest where e_year = #{param1} and e_semester =#{param2}
+	</select>
+	
+	<update id="UpdateDao">
+		update enroll set c_score=#{param1},c_alpha=#{param2},c_rank=#{param3} where s_id =#{param4} and c_id=#{param5}
+	</update>
+	
+	<select id="scoreSelDao" resultType="com.human.finalpjt.dto.scoreSelDto">
+		select a.e_year, a.e_semester,a.c_id,a.s_id,c.s_name,b.c_name, c.s_major, a.c_score,a.c_alpha,a.c_rank
+		from enroll a, course b, student c 
+		where a.c_id = b.c_id and a.s_id = c.s_id and a.s_id =#{param1} and a.e_year =#{param2} 
+		and a.e_semester=#{param3} and a.c_score is not null
+	</select>
+<!-- bro.hj's method already has same name so I append 2  -->	
+<!-- 	<select id="viewDao2" resultType="com.human.finalpjt.dto.InterDto2">
+ 		select a.s_id as s_id, a.s_name as s_name, b.c_name as
+		c_name, a.s_major as s_major, a.s_phone as s_phone
+		from student a, course b
+		where c_id
+		in(select c.c_id
+		from teach c, professor d
+		where c.p_id = d.p_id and
+		c.p_id =#{param1, jdbcType=VARCHAR})
+	</select>
+	
+	<select id="scoreSelDao2"
+		resultType="com.human.finalpjt.dto.scoreSelDto2">
+		select a.n_year as n_year, a.st_semester as st_semester,
+		a.st_p_major as st_p_major, a.st_c_id as st_c_id, a.st_c_name as
+		st_c_name, a.st_c_major as st_c_major, a.st_s_sum as st_s_sum,
+		a.st_alpha as st_alpha from st_grade a, student b where a.st_s_id =
+		b.s_id and a.st_s_id = #{param1}
+	</select>
+	
+	<select id="searchDao2"
+		resultType="com.human.finalpjt.dto.searchdto2">
+		select a.t_year as t_year, a.t_semester as t_semester,
+		c.c_name as c_name, a.c_id as c_id, a.t_day as t_day, a.t_time as
+		t_time, a.t_room as t_room, c.c_major as c_major, b.p_major as p_major
+		from teach a, professor b, course c where a.p_id = b.p_id and a.c_id =
+		c.c_id and a.p_id=#{param1} and t_year =#{param2} and t_semester=#{param3}
+	</select>
+	
+	<insert id="InsertDao2">
+		insert into st_grade(n_year, st_s_id, st_semester,
+		st_p_major,st_c_id, st_c_name, st_c_major, st_s_sum, st_alpha,st_rank)
+		values(#{param1},#{param2},#{param3},#{param4},#{param5},#{param6},#{param7},#{param8},#{param9},#{param10})
+	</insert>
+	
+	<update id="UpdateDao2">
+		update st_grade set st_sum=#{param1},
+		st_alpha=#{param2} where st_id =#{param3}
+	</update>
+	
+	<select id="viewDao2"
+		resultType="com.human.finalpjt.dto.InterDto2">
+ 		select a.s_id as s_id, a.s_name as s_name, b.c_name as
+		c_name, a.s_major as s_major, a.s_phone as s_phone
+		from student a, course b
+		where c_id
+		in(select c.c_id
+		from teach c, professor d
+		where c.p_id = d.p_id and
+		c.p_id =#{param1, jdbcType=VARCHAR})
+	</select> -->
+	
+</mapper>
+

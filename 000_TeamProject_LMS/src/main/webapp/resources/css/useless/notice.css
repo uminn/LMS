@@ -1,0 +1,54 @@
+.clear{
+    clear: both;
+}
+#wrap{
+    width: 1000px;
+    margin: 0 auto;
+    line-height: 30px;
+}
+#boardTitle{
+    margin: 30px 20px;
+    font-size: 50px;
+}
+#board li:first-child ul li{
+    background-color:#c9c9c9;
+}
+#board ul li{
+    float: left;
+    text-align: center;
+    border-bottom: 1px solid silver;
+}
+#board ul li:first-child{width: 10%;}
+#board ul li:nth-child(2){width: 55%;}
+#board ul li:nth-child(3){width: 10%;}
+#board ul li:nth-child(4){width: 15%;}
+#board ul li:last-child{width: 10%;}
+#paging{
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+}
+#paging li{
+    float: left;
+}
+#search{
+    float: right;
+    margin-top: -55px;
+}
+#searchOption{
+    height: 34px;
+    vertical-align:middle;
+}
+#search input{
+    height: 30px;
+    vertical-align:middle;
+}
+.left{
+    text-align: left;
+}
+.right{
+    text-align: right;
+}
+#img11{
+    margin-top: 75px;
+}

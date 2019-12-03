@@ -1,0 +1,144 @@
+@import url("student.css");
+@import url("button.css");
+@import url("main_menu.css");
+#grade-insert{
+    margin-top: 50px;
+    width: 1380px;
+    margin-left: 250px;
+}
+.eval_title1 ul li{
+    float: left;
+    width: 295px;
+}
+.pscore_content1_1 ul li{
+    float: left;
+    margin: 0 auto;
+    width: 225px;
+    height: 45px;
+    line-height: 45px;
+    text-align: center;
+    margin-top: 50px;
+}
+.pscore_content1_1_1 ul li{
+   float: left;
+    margin: 0 auto;
+    width: 290px;
+    height: 45px;
+    line-height: 45px;
+    text-align: center;
+    margin-top: 50px;
+}
+.pscore_content1_2 ul li{
+    float: left;
+    margin: 0 auto;
+    width: 342px;
+    line-height: 50px;
+    text-align: center;
+    border-bottom: 1px solid silver;
+}
+.pscore_content1_2_1 ul li{
+   float: left;
+    margin: 0 auto;
+    width: 290px;
+    line-height: 50px;
+    text-align: center;
+    border-bottom: 1px solid silver;
+}
+.pscore_content1{ margin: 0 auto; }
+.pscore_content1_2 ul li:nth-child(1){width: 140px;}
+.pscore_content1_2 ul li:nth-child(2){width: 160px;}
+
+.pscore_content1_2 ul li:nth-child(3),
+.pscore_content1_2 ul li:nth-child(4){
+    width: 177px;
+}
+
+.pscore_content1_2 ul li:nth-child(5),
+.pscore_content1_2 ul li:nth-child(6){
+   width: 130px;
+}
+
+.pscore_content1_2 ul li:nth-child(7){width: 100px;}
+.pscore_content1_2 ul li:nth-child(8){width: 215px;}
+
+#change4-content{
+    overflow: auto;
+    width: 1366px;
+    height: auto;
+    background-color: #eee;
+}
+#change4-content-1{
+   overflow: auto;
+    width: 1366px;
+    height: auto;
+    background-color: #eee;
+    display: none;
+}
+.pscore_content1_1 li:first-child ul li,
+.pscore_content1_1_1 li:first-child ul li{
+    background-color:#D1D3E8;
+}
+.pscore_content1_1 ul li:nth-child(1){width: 145px;}
+.pscore_content1_1 ul li:nth-child(2){width: 153px;}
+.pscore_content1_1 ul li:nth-child(3){ width: 170px;}
+.pscore_content1_1 ul li:nth-child(4){ width: 188px;}
+.pscore_content1_1 ul li:nth-child(5),
+.pscore_content1_1 ul li:nth-child(6){
+   width: 128px;
+}
+.pscore_content1_1 ul li:nth-child(7){
+    width: 100px;
+}
+
+#grade-insert{
+    margin-top: 50px;
+    width: 1380px;
+    margin-left: 250px;
+}
+#pscoreinput_main{
+    width: 1200px;
+}
+#numtxt,.avgtxt,.alphatxt{
+   border-radius: 0px;
+    border: none;
+    background: transparent;
+    border-bottom: 1px solid silver;
+    outline: none;
+    font-size: 18px;
+    width: 50px;
+}
+.pscoreinput_content li:first-child ul li{
+    background-color:#D1D3E8;
+}
+.pscoreinput_content ul li{
+    float: left;
+    margin: 0 auto;
+    width: 230px;
+    height: 45px;
+    line-height: 45px;
+    text-align: center;
+    margin-top: 15px;
+}
+.pscoreinput_content1 ul li{
+    float: left;
+    margin: 0 auto;
+    width: 230px;
+    line-height: 45px;
+    text-align: center;
+    margin-top: 10px;
+    border-bottom: 1px solid silver;
+}
+.pscoreinput_content ul li:nth-child(5),
+.pscoreinput_content ul li:nth-child(6),
+.pscoreinput_content1 ul li:nth-child(5),
+.pscoreinput_content1 ul li:nth-child(6){
+    width: 150px;
+}
+#score,#alpha{
+    width: 95px;
+    border-radius: 0px;
+    text-align: center;
+    font-size: 15px;
+    padding: 0px;
+    height: 25px;
+}

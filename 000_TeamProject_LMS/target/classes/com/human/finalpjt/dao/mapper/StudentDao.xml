@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.human.finalpjt.dao.StudentDao">
+<!-- <insert id="studentInfoInput">
+	insert into stduentInfomation (s_num,s_name,s_birth,s_gender,s_college,s_major,s_country,s_grade,status,s_addr) values (#{param1},#{param2},#{param3},#{param4},#{param5},#{param6},#{param7},#{param8},#{param9},#{param10})
+</insert>		
+<insert id="writeFile">
+	insert into studentPictures (s_num,s_file,s_filename) values (#{param1},#{param2,jdbcType=VARCHAR},#{param3,jdbcType=VARCHAR})
+</insert> -->
+
+<insert id="StudentInfoInput">
+   insert into student (s_id,s_pwd,s_name,s_addr,s_email,s_phone,s_grade,s_college,s_major,s_gender,s_birth,s_country,s_status) values (#{param1},#{param2},#{param3},#{param4},#{param5},#{param6},#{param7},#{param8},#{param9},#{param10},#{param11},#{param12},#{param13})
+</insert>	
+<insert id="writeFile">
+	insert into studentPictures (s_id,s_file,s_filename) values (#{param1},#{param2,jdbcType=VARCHAR},#{param3,jdbcType=VARCHAR})
+</insert>
+<update id="StudentInfoUpdate">
+	update student set s_pwd = ${param2} where s_id = ${param1}
+</update>
+<select id="pickPicture" resultType="java.lang.String">
+   select s_filename from studentPictures where s_id = #{param1}
+</select>
+<select id="StudentList" resultType="com.human.finalpjt.dto.StudentDto">
+	select c.s_filename s_filename,a.s_name s_name,a.s_id s_id,a.s_major s_major,a.s_phone s_phone,a.s_email s_email from student a,professor b,studentpictures c where b.p_major = a.s_major and a.s_id = c.s_id and b.p_id=#{param1}
+</select>
+<select id="StudentNumCount" resultType="int">
+	select count(*) count from student where s_major=#{param1}
+</select>
+
+
+<select id="getSumOfMajorUnit" resultType="java.lang.Integer">
+	select nvl(sum(b.c_unit),0) from enroll a, course b where a.c_id=b.c_id and a.s_id=#{param1} and b.c_major='전공'
+</select>
+<select id="getSumOfGeneralUnit" resultType="java.lang.Integer">
+	select nvl(sum(b.c_unit),0) from enroll a, course b where a.c_id=b.c_id and a.s_id=#{param1} and b.c_major='교양'
+</select>
+
+<!-- 강의평가 -->
+<select id="show_eval" resultType="com.human.finalpjt.dto.EnrollDto">
+	select a.c_id as c_id, b.c_major as c_major, b.c_name as c_name, b.c_unit as c_unit, c.p_name as p_name, d.e_avg_eval as e_avg_eval
+	from teach a, course b, professor c, enroll d, student e
+	where e.s_id=#{param1} and d.s_id=e.s_id and a.c_id = b.c_id and b.c_id = d.c_id and a.p_id=c.p_id  
+        and a.t_year=#{param2} and a.t_year = d.e_year and a.t_semester=#{param3} and a.t_semester = d.e_semester
+</select>
+<update id="update_eval">
+	update enroll set e_avg_eval = #{param1} where s_id=#{param2} and c_id=#{param3}
+</update>
+
+<select id="countStudentEachMajor" resultType="com.human.finalpjt.dto.StudentDto">
+	select s_major, s_grade, count(*) as count from student group by s_major,s_grade order by 1,2
+</select>
+<select id="countProfessorEachMajor" resultType="com.human.finalpjt.dto.ProfessorDto">
+	select p_major,count(*) as count from professor group by p_major
+</select>
+</mapper>

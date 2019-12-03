@@ -1,0 +1,145 @@
+@import url("student.css");
+@import url("main_menu.css");
+@import url("button.css");
+.input-field {
+    width: 200px;
+    padding: 12px;
+    text-align: center;
+    height: 15px;
+}
+header{
+    width: 1707px;
+    height: 80px;
+}
+#save_button{
+    width: 1700px;
+}
+/********************************************************************/
+#info1{
+    margin-left: 30px;
+    width: 1650px;
+    padding-top:10px;
+	border:1px solid #666;
+	border-radius:8px;
+    box-shadow:0 0 5px #666;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+#info2{
+    margin-left: 30px;
+    margin-top: 25px;
+    width: 1650px;
+    padding-top:10px;
+	border:1px solid #666;
+	border-radius:8px;
+    box-shadow:0 0 5px #666;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+#uploadFile{
+    float: left;
+    width: 200px;
+    height: 156px;
+    margin-left: 100px;
+    margin-top: 30px;
+    padding: 10px;
+    border: 10px solid #f0f0f0;
+    text-align: center;
+}
+.camera{
+    background:url('../images/file.png') no-repeat;
+    height: 150px;
+    width: 93%;
+    margin-left: 21px;
+    display: block;
+    cursor: pointer;
+}
+input[type="file"]{
+    display:block;
+    width:150px;
+    height:150px;
+    display:none;
+}
+#imageReader{
+    max-height:150px;
+    max-width:150px;
+    margin-top: 32px;
+}
+/*student_info(이름, 대학, 생년월일, 성별, 국적, 주소)*/
+#join1{
+    float: left;
+    margin-left: 104px;
+}
+/*student_info(학번, 학과, 학년, 학적상태)*/
+#join2{
+    float: left;
+    margin-left: -28px;
+}
+/*student_info(input란 div태그 영역)*/
+#join1_1,#join2_1{
+    float: left;
+    padding: 10px;
+}
+.input-icons { 
+    width: 100%; 
+    margin-bottom: 10px; 
+} 
+.input-icons i {
+    position: absolute;
+    margin-top: 12px;
+    margin-left: 9px;
+} 
+.input-icons1{
+    padding: 8.5px;
+    margin-top: 18px;
+}
+.input-icons2{
+    padding: 5.5px;
+    margin-top: 22px;
+    margin-left: 60px;
+}
+#addr{
+    width: 437px;
+    margin-top: 9px;
+}
+#gen{
+    width: 50px;
+    margin-top: 10px;
+}
+#gen1{ width: 50px; }
+#addricon{ margin-top: 20px; }
+#depart{
+    width: 200px;
+    height: 34px;
+    margin-left: 5px;
+}
+#info, #grade{
+    width: 82px;
+    height: 34px;
+    margin-left: 2px;
+}
+/*student_info(학적변동사항)*/
+#change1-content{
+    overflow: auto;
+    width: 100%;
+    height: 200px;
+}
+#board5 ul li{
+    float: left;
+    width: 272px;
+    height: 40px;
+    line-height: 35px;
+    margin-top: 15px;
+    text-align: center;
+    border-bottom: 1px solid silver;
+}
+#board5-content ul li{
+    float: left;
+    width: 272px;
+    height: 40px;
+    line-height: 35px;
+    margin-top: 15px;
+    text-align: center;
+    border-bottom: 1px solid silver;
+}
+#board5 li:first-child ul li{
+    background-color:#D1D3E8;
+}

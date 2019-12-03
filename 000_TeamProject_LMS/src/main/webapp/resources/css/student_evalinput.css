@@ -1,0 +1,52 @@
+@import url("button.css");
+@import url("main_menu.css");
+/************************************************/
+#eval-insert{
+    margin-top: 50px;
+    width: 1380px;
+    margin-left: 250px;
+}
+#evalinput_main{
+    width: 1370px;
+}
+.evalinput_content li:first-child ul li{
+    background-color:#D1D3E8;
+}
+.evalinput_content ul li{
+    float: left;
+    /* margin: 0 auto; */
+    /* width: 230px; */
+    height: 45px;
+    line-height: 45px;
+    text-align: center;
+    margin-top: 15px;
+}
+.evalinput_content1 ul li{
+    float: left;
+    /* margin: 0 auto; */
+    /* width: 230px; */
+    line-height: 45px;
+    /* margin-top: 10px; */
+    border-bottom: 1px solid silver;
+}
+.num{
+    text-align: center;
+    width: 108px;
+    border-right: 1px solid silver;
+}
+.content{
+    margin-left: 2px;
+    text-align: left;
+    width: 950px;
+    border-right: 1px solid silver;
+}
+.jum{
+    text-align: center;
+    width: 60px;
+    border-right: 1px solid silver;
+}
+#eval_save{
+    float: right;
+    height: 28px;
+    border-radius: 0px;
+}

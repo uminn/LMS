@@ -1,0 +1,134 @@
+#search{
+    width: 70px;
+    height: 35px;
+    border-radius: 0px;
+    padding-left: 0;
+    outline: none;
+    position: relative;
+}
+#saveBtn, #listBtn, #modifyBtn, #deleteBtn,
+input[type="reset"]{
+    height: 40px;
+    margin-top: 10px;
+    margin-right: 39px;
+    border-radius: 0;
+    width: 100px;
+}
+#save{
+    float: right;
+    height: 28px;
+    margin-top: 10px;
+    margin-right: 39px;
+    border-radius: 0px;
+}
+#score_save{
+    float: right;
+    height: 28px;
+    border-radius: 0px;
+}
+#test{
+    width: 110px;
+    padding: 9px;
+    outline: none;
+    background: none;
+    margin-top: 0;
+}
+
+input[type="button"]{
+    width: 80px;
+    height: 42px;
+    border-radius: 42px;
+    padding-left: 0;
+    outline: none;
+    position: relative;
+}
+button:before{
+    content: "\f002";
+    font-family: FontAwesome;
+    color: #324b4e;
+    position: relative;
+    left: -37px;
+}
+button {
+    background: none;
+    border: none;
+    outline: none;
+}
+#plan{
+    float: left;
+    width: 135px;
+    padding: 9px;
+    margin-left: 10px;
+    border-radius: 10px;
+    outline: none;
+    background-color: #FFF3EB;
+}
+#request{
+    float: left;
+    width: 100px;
+    padding: 9px;
+    margin-left: 10px;
+    border-radius: 10px;
+    outline: none;
+    background-color: #FFF3EB;
+}
+#cancel{
+    float: left;
+    width: 90px;
+    margin-left: 10px;
+    border-radius: 10px;
+    outline: none;
+    background-color: #FFF3EB;
+}
+#write,#showMore{
+    float: right;
+    width: 90px;
+    margin-left: 10px;
+    border-radius: 10px;
+    outline: none;
+    background-color: #FFF3EB;
+}
+#paging #write_button li{
+    float: right;
+    margin-right: -410px;
+}
+#insertBTN,#updateBTN{
+   border-radius: 0px;
+}
+/**/
+.saveBTN{
+    background:#1AAB8A;
+    color:#fff;
+    border:none;
+    position:relative;
+    height:60px;
+    font-size:1.6em;
+    padding:0 2em;
+    cursor:pointer;
+    transition:800ms ease all;
+    outline:none;
+}
+.saveBTN:hover{
+    background:#fff;
+    color:#1AAB8A;
+}
+.saveBTN:before,.saveBTN:after{
+    content:'';
+    position:absolute;
+    top:0;
+    right:0;
+    height:2px;
+    width:0;
+    background: #1AAB8A;
+    transition:400ms ease all;
+}
+.saveBTN:after{
+    right:inherit;
+    top:inherit;
+    left:0;
+    bottom:0;
+}
+.saveBTN:hover:before,.saveBTN:hover:after{
+    width:100%;
+    transition:800ms ease all;
+}

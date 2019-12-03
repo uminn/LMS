@@ -1,0 +1,98 @@
+@import url("student.css");
+@import url("main_menu.css");
+@import url("button.css");
+@import url("enroll.css");
+/**********************************************************************************/
+#completion,#depart{
+    width: 200px;
+    height: 34px;
+    margin-left: 5px;
+}
+#enroll-title ul li{
+    float: left;
+    /* width: 127px; */
+    height: 35px;
+    text-align: center;
+    margin-top: 10px;
+    line-height: 36px;
+    border-bottom: 1px solid silver;
+}
+.cid,cid1{ width: 140px; }
+.cmajor,.cmajor1{ width: 140px; }
+.cname,.cname1{ width: 140px; }
+.cunit,.cunit1{ width: 154px; }
+.pname,.pname1{ width: 190px; }
+.cgrade,.cgrade1{ width: 100px; }
+.tmax,.tmax1{ width: 180px; }
+.ttime,.ttime1{ width: 112px; }
+.troom,.troom1{ width: 140px; }
+.lecturePlan{ width: 243px; }
+
+#enroll-search{
+    overflow: auto;
+    width: 100%;
+    height: 330px;
+}
+#content01{
+    font-size: 16px;
+    overflow: auto;
+}
+#content01 ul li{
+    float: left;
+    /* width: 126px; */
+    height: 55px;
+    text-align: center;
+    border-bottom: 1px solid silver;
+    margin-top: 10px;
+    line-height: 35px;
+    font-size: 14px;
+}
+/* #content01 ul li:last-child{ width: 140px; } */
+#board1 ul li{
+    float: left;
+    width: 174px;
+    height: 40px;
+    line-height: 35px;
+    margin-left: 1px;
+    margin-top: 15px;
+    text-align: center;
+    border-bottom: 1px solid silver;
+}
+#content02 ul li{
+    float: left;
+    width: 175px;
+    height: 55px;
+    text-align: center;
+    border-bottom: 1px solid silver;
+    margin-top: 10px;
+    line-height: 45px;
+}
+#enroll-insert{
+    overflow: auto;
+    width: 100%;
+    height: 330px;
+}
+#board2 ul li{
+    float: left;
+    width: 193px;
+    height: 40px;
+    line-height: 35px;
+    margin-top: 15px;
+    margin-left: 1px;
+    text-align: center;
+    border-bottom: 1px solid silver;
+}
+#enroll-mypage{
+    overflow: auto;
+    width: 100%;
+    height: 330px;
+}
+#content03 ul li{
+    float: left;
+    width: 194px;
+    height: 55px;
+    text-align: center;
+    border-bottom: 1px solid silver;
+    margin-top: 10px;
+    line-height: 45px;
+}

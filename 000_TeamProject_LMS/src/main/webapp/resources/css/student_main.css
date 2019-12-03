@@ -1,0 +1,70 @@
+@import url("main_menu.css");
+/***********************************************************/
+section{ 
+    margin-top: 50px;
+    margin-left: 200px; 
+}
+#h1 { margin-left: 50px; }
+.wide-board{
+    width: 1500px;
+    height: 355px;
+   /*  border: 1px solid black; */
+    float: left;
+    margin: 10px;
+    margin-left: 50px;
+}
+#slide{
+    line-height: 300px;
+    text-align: center;
+}
+.board{
+    float: left;
+    width: 45%;
+    height: 300px;
+    margin: 10px;
+    margin-left: 40px;
+    overflow: hidden;
+}
+.title{
+    width: 80%;
+    font-size: 24px;
+    padding: 5px 10px;
+}
+.more{
+    padding: 5px;
+    margin-left: 520px;
+}
+table{
+    width: 100%;
+    border-collapse: collapse;
+    margin: -4px 0;
+}
+th{
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+    padding: 5px 0;
+}
+#notice,#schedule{
+    margin-top: 80px;
+}
+#notice .t_title{ width: 80%; }
+
+#schedule .t_title{ width: 60%; }
+
+#student_board_title ul li{
+    float: left;
+    width: 235px;
+    height: 35px;
+    text-align: center;
+    margin-top: 10px;
+    line-height: 36px;
+    border-bottom: 1px solid silver;
+}
+#student_board_title li:first-child ul li{
+    background-color:#D1D3E8;
+}
+
+#student_board_title{
+	height:210px;
+}
+

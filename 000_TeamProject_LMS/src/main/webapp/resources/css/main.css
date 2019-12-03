@@ -1,0 +1,934 @@
+/*메인 메뉴 초기화*/
+*{
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: inside;
+    font-family: '나눔바른고딕', sans-serif;
+}
+body{
+    background: #F3EEF0;
+}
+.clear{ clear: both; }
+nav{
+    width: 200px;
+    height: 100%;
+    top: 0;
+    float: left;
+    background-color: #C9D1E8;
+    position: fixed;
+    z-index: 1;
+}
+#h1 { margin-left: 50px; }
+h2 { color: #1C1C1C; }
+#logo img{
+    width: 173px;
+    height: 150px;
+    margin-left: 16px;
+}
+#logo1 img{ width: 200px; }
+#logged{
+    margin-bottom: 5px;
+    padding: 10px;
+    background-color: rgb(44, 70, 167);
+}
+#welcome{
+    text-align: center;
+    color: white;
+}
+.accordion {
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    transition: 0.4s;
+}
+.active, .accordion:hover { background-color: #ccc; }
+.accordion:after {
+    content: '\002B';
+    color: #777;
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+}
+.accordion-x::after{ content: none; }
+.active:after { content: "\2212"; }
+#main{
+    border-bottom: 5px solid rgb(33,164, 220);
+    height: 150px;
+}
+
+/*professor_nav*/
+
+#mainMenu ul {
+    padding: 0 18px;
+    background-color: white;
+    max-height: 0;
+    overflow: hidden;
+    margin-bottom: 0;
+    transition: max-height 0.2s ease-out;
+}
+#mainMenu li{
+    padding-left: 15px;
+    border-bottom: 1px solid rgb(200, 200, 200);
+}
+#mainMenu li a{
+    width: 200px;
+    color: black;
+    line-height: 40px;
+}
+
+section{ margin-left: 200px; }
+
+#board_section{ padding-top: 0px; }
+#grade-wrap{
+    height: auto;
+    margin-top: 0px;
+}
+#grade-wrap-content{
+    width: 1600px;
+    height: auto;
+    margin-left: 10px;
+    margin-top: 25px;
+}
+.wide-board{
+    width: 92%;
+    height: 300px;
+    border: 1px solid black;
+    float: left;
+    margin: 10px;
+    margin-left: 50px;
+}
+#slide{
+    line-height: 300px;
+    text-align: center;
+}
+.board{
+    float: left;
+    width: 45%;
+    height: 300px;
+    margin: 10px;
+    margin-left: 40px;
+}
+.title{
+    width: 80%;
+    font-size: 24px;
+    padding: 5px 10px;
+}
+.more{
+    float: right;
+    padding: 5px;
+}
+table{
+    width: 100%;
+    border-collapse: collapse;
+    margin: -4px 0;
+}
+th{
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+    padding: 5px 0;
+}
+#notice .t_title{ width: 80%; }
+
+#schedule .t_title{ width: 60%; }
+td{ padding: 5px 0; }
+hr{ width: 1592px; }
+li { list-style: none }
+a{text-decoration: none}
+
+header {
+    width: 1707px;
+    height: 85px;
+    background-color: #C9D1E8;
+    position: fixed;
+    z-index: 3;
+}
+.nav {
+    float: left;
+    width: 1700px;
+    overflow: hidden;
+}
+
+.nav>li {
+    float: left;
+    width: 10%;
+    margin-top: 1.5%;
+    box-sizing: border-box;
+}
+
+.nav>li>a {
+    display: block;
+    width: 100%;
+    text-align: center;
+    line-height: 3.4;
+    font-size: 17px;
+    color:black;
+}
+.nav>li>a:hover{ background-color: #AEC8E5; }
+
+#tabs1{ z-index: 2; }
+
+/*개설강좌, 수강신청내역 css*/
+.tab-wrap{
+    margin-top: 95px;
+}
+/*enroll부분 상단 메뉴 css*/
+#board-container{ position: relative; }
+.container {
+    width: 1200px;
+    height: 50px;
+    position: relative;
+}
+/*enroll부분 왼쪽 메뉴*/
+table.type09 {
+    border-collapse: collapse;
+    text-align: center;
+    line-height: 1.5;
+    font-size: 10px;
+    background: #f3f6f7;
+}
+table.type09 thead th {
+    padding: 10px;
+    font-weight: bold;
+    vertical-align: top;
+    color: #369;
+}
+table.type09 tbody th {
+    width: 900px;
+    padding: 10px;
+    font-weight: bold;
+    border-bottom: 1px solid #ccc;
+    background: #f3f6f7;
+}
+table.type09 td {
+    width: 350px;
+    padding: 22px;
+    font-size: 11px;
+    vertical-align: top;
+    border-bottom: 1px solid #ccc;
+    border-top: 2px solid black;
+}
+
+/*enroll 관련된 모든 레이아웃 초기화­*/
+#enroll_select li{
+    float: left;
+    padding: 2%;
+}
+.nameselect{
+    margin-top: 15px;
+    width:1650px;
+}
+legend{ margin-left: 25px; }
+
+#tab1{
+    padding: 0px;
+    width: 1677px;
+    margin: 10px;
+}
+#tab2{
+    padding: 10px;
+    width:1700px;
+}
+#tab3{
+    padding: 10px;
+    width:1700px;
+}
+#completion,#depart{
+    width: 200px;
+    height: 34px;
+    margin-left: 5px;
+}
+#info, #grade{
+    width: 82px;
+    height: 34px;
+    margin-left: 2px;
+}
+#year{
+    width: 109px;
+    height: 34px;
+    margin-left: 2px;
+    text-align: center;
+}
+/*버튼 관련 css*/
+input {
+    width: 185px;
+    height: 42px;
+    padding-left: 15px;
+    border-radius: 42px;
+    outline: none;
+    position: relative;
+}
+.accodion {
+    background: none;
+    border: none;
+    outline: none;
+}
+.accodian:before{
+    content: "\f002";
+    font-family: FontAwesome;
+    color: #324b4e;
+    position: relative;
+    left: -37px;
+}
+input[type="button"]{
+    width: 80px;
+    height: 42px;
+    border-radius: 42px;
+    padding-left: 0;
+    outline: none;
+    position: relative;
+}
+#plan{
+    float: left;
+    width: 135px;
+    padding: 9px;
+    margin-left: 10px;
+    border-radius: 10px;
+    outline: none;
+    background-color: #FFF3EB;
+}
+#request{
+    float: left;
+    width: 100px;
+    padding: 9px;
+    margin-left: 10px;
+    border-radius: 10px;
+    outline: none;
+    background-color: #FFF3EB;
+}
+#search{
+    width: 70px;
+    height: 35px;
+    border-radius: 0px;
+    padding-left: 0;
+    outline: none;
+    position: relative;
+}
+#test{
+    width: 110px;
+    padding: 9px;
+    outline: none;
+    background: none;
+    margin-top: 0;
+}
+#cancel{
+    float: left;
+    width: 90px;
+    margin-left: 10px;
+    border-radius: 10px;
+    outline: none;
+    background-color: #FFF3EB;
+}
+/*
+- ul/li부분 css초기화
+- 수강신청 filedset영역 수정css
+- 수강신청부분 css
+*/
+
+#wrap{
+    width: 1260px;
+    height: auto;
+    margin: 0 auto;
+    line-height: 30px;
+}
+#wrap1{
+    width: 1000px;
+    margin: 0 auto;
+    line-height: 30px;
+}
+#img11{ margin-top: 15px; }
+#img11 img{
+    width: 200px;
+    margin-left: 75px;
+}
+#enroll-info{
+    float: right;
+    margin-right: 140px;
+}
+#enroll-input{
+    border-radius: 0px;
+    height: 30px;
+}
+#enroll-board{
+    margin: 0 auto;
+    width: 1111px;
+}
+#boardTitle{
+    margin: 30px 20px;
+    font-size: 50px;
+}
+#board li:first-child ul li,
+#enroll-title li:first-child ul li,
+#board1 li:first-child ul li,
+#board2 li:first-child ul li,
+#board3 li:first-child ul li,
+#board4 li:first-child ul li,
+#board5 li:first-child ul li,
+.eval_content1_1 li:first-child ul li,
+.grade_content1_1 li:first-child ul li,
+.pscore_content1_1 li:first-child ul li{
+    background-color:#D1D3E8;
+}
+#board ul li{
+    float: left;
+    width: 197px;
+    height: 35px;
+    text-align: center;
+    margin-top: 10px;
+    line-height: 36px;
+    border-bottom: 1px solid silver;
+}
+
+#board ul li:nth-child(1){ width: 80px; }
+#board ul li:nth-child(2){ width: 490px; }
+#board ul li:nth-child(3){ width: 120px; }
+#board ul li:nth-child(4){ width: 177px; }
+#board ul li:nth-child(5){ width: 165px; }
+#board li:nth-child(5){ font-size: 16px; }
+
+#paging{
+    width: 1031px;
+    margin-left: 74px;
+}
+#paging ul{
+    margin: 0 auto;
+    width: 150px;
+    height: 27px;
+}
+#paging ul li{
+    float: left;
+    text-align: center;
+}
+#board1 ul li{
+    float: left;
+    width: 165px;
+    height: 40px;
+    line-height: 35px;
+    margin-left: 1px;
+    margin-top: 15px;
+    text-align: center;
+    border-bottom: 1px solid silver;
+}
+#board2 ul li{
+    float: left;
+    width: 206px;
+    height: 40px;
+    line-height: 35px;
+    margin-top: 15px;
+    margin-left: 1px;
+    text-align: center;
+    border-bottom: 1px solid silver;
+}
+
+#board3 ul li{
+    float: left;
+    width: 131px;
+    height: 40px;
+    line-height: 35px;
+    margin-top: 15px;
+    text-align: center;
+    border-bottom: 1px solid silver;
+}
+#board3 ul li:nth-child(3),
+#board3 ul li:nth-child(4){ width: 140px; }
+#board3 ul li:nth-child(6){ width: 150px; }
+#board3 ul li:nth-child(7){ width: 135px; }
+#board3 ul li:nth-child(9){ width: 153px; }
+#board3 ul li:nth-child(11){ width: 143px; }
+#board3 ul li:nth-child(12){ width: 130px; }
+
+#board4 ul li{
+    float: left;
+    width: 185px;
+    height: 40px;
+    line-height: 35px;
+    margin-top: 15px;
+    text-align: center;
+    border-bottom: 1px solid silver;
+}
+#board4 ul li:nth-child(1){ width: 120px;}
+#board4 ul li:nth-child(3){ width: 120px;}
+#board4 ul li:nth-child(5){ width: 300px;}
+
+#board5 ul li{
+    float: left;
+    width: 272px;
+    height: 40px;
+    line-height: 35px;
+    margin-top: 15px;
+    text-align: center;
+    border-bottom: 1px solid silver;
+}
+
+#content01 ul li{
+    float: left;
+    width: 126px;
+    height: 55px;
+    text-align: center;
+    border-bottom: 1px solid silver;
+    margin-top: 10px;
+    line-height: 35px;
+    font-size: 14px;
+}
+#enroll-search{
+    overflow: auto;
+    width: 100%;
+    height: 330px;
+}
+
+#content02 ul li{
+    float: left;
+    width: 165px;
+    height: 55px;
+    text-align: center;
+    border-bottom: 1px solid silver;
+    margin-top: 10px;
+    line-height: 45px;
+}
+#enroll-insert{
+    overflow: auto;
+    width: 100%;
+    height: 330px;
+}
+
+#content03 ul li{
+    float: left;
+    width: 206px;
+    height: 55px;
+    text-align: center;
+    border-bottom: 1px solid silver;
+    margin-top: 10px;
+    line-height: 45px;
+}
+#enroll-mypage{
+    overflow: auto;
+    width: 100%;
+    height: 330px;
+}
+
+#content04 ul li{
+    float: left;
+    width: 139px;
+    height: 55px;
+    text-align: center;
+    border-bottom: 1px solid silver;
+    margin-top: 10px;
+    line-height: 43px;
+    font-size: 15px;
+}
+#content04 ul li:last-child{ 
+    color: red;
+    font-weight: bold;
+}
+#content04 ul li:nth-child(1){ width: 124px; }
+
+#enroll-list{
+    overflow: auto;
+    width: 100%;
+    height: 330px;
+}
+#enroll-list1{
+    overflow: auto;
+    width: 100%;
+    height: 330px;
+}
+
+#content05 ul li{
+    float: left;
+    width: 185px;
+    height: 55px;
+    text-align: center;
+    border-bottom: 1px solid silver;
+    margin-top: 10px;
+    line-height: 40px;
+}
+#content05 ul li:nth-child(1){ width: 150px;}
+#content05 ul li:nth-child(2){ width: 120px;}
+#content05 ul li:nth-child(3){ width: 190px;}
+#content05 ul li:nth-child(4){ width: 116px;}
+#content05 ul li:nth-child(5){ width: 330px;}
+
+#content01{
+    font-size: 16px;
+    /*overflow: auto;*/
+}
+#content01 ul li:last-child{ width: 140px; }
+
+
+/*개설과목 조회 css*/
+#fi1{
+    width: 1670px;
+    margin-left: -21px;
+    height: auto;
+}
+#enroll-title ul li{
+    float: left;
+    width: 127px;
+    height: 35px;
+    text-align: center;
+    margin-top: 10px;
+    line-height: 36px;
+    border-bottom: 1px solid silver;
+}
+/*수강신청 내역 css*/
+#fi2{
+    width:1670px;
+    margin: 20px;
+}
+/*졸업사정조회 main css부분*/
+#last_main{
+    width: 1730px;
+    height: auto;
+    margin-top: 100px;
+    position: fixed;
+}
+/*관리자 화면 초기화 css*/
+.img{
+    float: left;
+    margin: 50px;
+}
+.img img{
+    width: 100px;
+    height: 100px;
+}
+
+#join1{
+    float: left;
+    margin-left: 104px;
+}
+#join2{
+    float: left;
+    margin-left: -148px;
+}
+#join1_1,#join2_1{
+    float: left;
+    padding: 20px;
+}
+.input-icons i {
+    position: absolute;
+    margin-top: 12px;
+    margin-left: 9px;
+} 
+.input-icons { 
+    width: 100%; 
+    margin-bottom: 10px; 
+} 
+.input-icons1{
+    padding: 8.5px;
+    margin-top: 18px;
+}
+.input-icons2{
+    padding: 5.5px;
+    margin-top: 18px;
+    margin-left: 60px;
+}
+.input-field {
+    width: 200px;
+    padding: 12px;
+    text-align: center;
+    height: 15px;
+}
+.input-field1 {
+    text-align: center;
+    height: 31px;
+    margin-left: 13px;
+    padding-left: 0px;
+} 
+
+#uploadFile{
+    float: left;
+    width: 200px;
+    height: 156px;
+    margin-left: 100px;
+    margin-top: 30px;
+    padding: 10px;
+    border: 10px solid #f0f0f0;
+    text-align: center;
+}
+.camera{
+    background:url('../images/file.png') no-repeat;
+    height: 150px;
+    width: 93%;
+    margin-left: 21px;
+    display: block;
+    cursor: pointer;
+}
+input[type="file"]{
+    display:block;
+    width:150px;
+    height:150px;
+    display:none;
+}
+#imageReader{
+    max-height:150px;
+    max-width:150px;
+    margin-top: 32px;
+}
+#info1{
+    margin-left: 30px;
+    width: 1650px;
+    padding-top:10px;
+	border:1px solid #666;
+	border-radius:8px;
+    box-shadow:0 0 5px #666;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+#info2{
+    margin-left: 30px;
+    margin-top: 25px;
+    width: 1650px;
+    padding-top:10px;
+	border:1px solid #666;
+	border-radius:8px;
+    box-shadow:0 0 5px #666;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+#info_title{
+    font-size: 20px;
+    background-color: #f3eef0;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+#save{
+    float: right;
+    height: 28px;
+    margin-top: 10px;
+    margin-right: 39px;
+    border-radius: 0px;
+}
+#addr{
+    width: 500px;
+    margin-top: 9px;
+}
+#gen{
+    width: 50px;
+    margin-top: 10px;
+}
+#gen1{ width: 50px; }
+#addricon{ margin-top: 20px; }
+#title{
+    width: 100%;
+    height: auto;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 15px;
+}
+#info_content{
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 30px;
+    border-bottom: 1px solid #ccc;
+    width: 100%;
+}
+#board5-content ul li{
+    float: left;
+    width: 272px;
+    height: 40px;
+    line-height: 35px;
+    margin-top: 15px;
+    text-align: center;
+    border-bottom: 1px solid silver;
+}
+
+.last_title1 ul li{
+    float: left;
+    width: 420px;
+    height: 40px;
+    line-height: 35px;
+    margin-top: 15px;
+    text-align: center;
+}
+.last_title1 ul li:nth-child(1){ width: 315px; }
+.last_title1 ul li:nth-child(2){ width: 23%; }
+.last_title1 ul li:nth-child(3){ width: 15%; }
+.last_title1 ul li:nth-child(4){ width: 27%; }
+.last_title1 ul li:nth-child(5){ width: 17%; }
+.last_title1 ul li:nth-child(6){ width: 28%; }
+
+.last_title2 ul li{
+    float: left;
+    width: 100%;
+    height: 40px;
+    line-height: 35px;
+    margin-top: 15px;
+    text-align: center;
+}
+
+.last_content1 ul li{
+    float: left;
+    width: 763px;
+    height: 40px;
+    line-height: 35px;
+    text-align: center;
+}
+
+.last_content2 ul li{
+    float: left;
+    width: 190px;
+    height: 40px;
+    line-height: 35px;
+    text-align: center;
+}
+.last_content2 ul li:nth-child(5),
+.last_content2 ul li:nth-child(6),
+.last_content2 ul li:nth-child(7),
+.last_content2 ul li:nth-child(8){
+    float: left;
+    width: 207px;
+    height: 40px;
+    line-height: 35px;
+    text-align: center;
+}
+.last_content2 ul li:nth-child(4){ width: 190px; }
+
+.last_content3 ul li{
+    float: left;
+    width: 190px;
+    height: 40px;
+    line-height: 35px;
+    text-align: center;
+}
+.last_content3 ul li:nth-child(5),
+.last_content3 ul li:nth-child(6),
+.last_content3 ul li:nth-child(7),
+.last_content3 ul li:nth-child(8){
+    width: 207px;
+    border-right: 1px solid silver;
+}
+
+#change1-content{
+    overflow: auto;
+    width: 100%;
+    height: 200px;
+}
+#change2-content{
+    overflow: auto;
+    width: 100%;
+    height: auto;
+    display: none;
+}
+#change3-content{
+    overflow: auto;
+    width: 100%;
+    height: 200px;
+}
+#change4-content{
+    overflow: auto;
+    width: 1366px;
+    height: auto;
+    background-color: #eee;
+    /* display: none; */
+}
+#grade-title ul li{
+    width: 149px;
+    height: 27px;
+    line-height: 35px;
+    text-align: center;
+    float: left;
+    margin-top: 35px;
+}
+
+
+.last_content1 ul li:nth-child(1),
+.last_content2 ul li:nth-child(1),
+.last_content2 ul li:nth-child(2),
+.last_content2 ul li:nth-child(3),
+.last_content2 ul li:nth-child(4),
+.last_content2 ul li:nth-child(5),
+.last_content2 ul li:nth-child(6),
+.last_content2 ul li:nth-child(7),
+.last_content2 ul li:nth-child(8),
+.last_content3 ul li:nth-child(1),
+.last_content3 ul li:nth-child(2),
+.last_content3 ul li:nth-child(3),
+.last_content3 ul li:nth-child(4){
+    border-right: 1px solid silver;
+}
+
+/*강의평가 조회(student_evaluation)*/
+.eval_title1 ul li{
+    float: left;
+    width: 285px;
+}
+.eval_content1_1 ul li{
+    float: left;
+    margin: 0 auto;
+    width: 230px;
+    height: 55px;
+    line-height: 50px;
+    text-align: center;
+    margin-top: 50px;
+}
+.grade_content1_1 ul li{
+    float: left;
+    margin: 0 auto;
+    width: 173px;
+    height: 55px;
+    line-height: 50px;
+    text-align: center;
+    margin-top: 50px;
+}
+.pscore_content1_1 ul li{
+    float: left;
+    margin: 0 auto;
+    width: 273px;
+    height: 45px;
+    line-height: 45px;
+    text-align: center;
+    margin-top: 50px;
+}
+.eval_content1_2 ul li{
+    float: left;
+    margin: 0 auto;
+    width: 227px;
+    text-align: center;
+    margin-top: 20px;
+}
+.pscore_content1_2 ul li{
+    float: left;
+    margin: 0 auto;
+    width: 273px;
+    line-height: 50px;
+    text-align: center;
+    border-bottom: 1px solid black;
+}
+.grade_content1_2 ul li{
+    float: left;
+    margin: 0 auto;
+    width: 173px;
+    text-align: center;
+    margin-top: 10px;
+    line-height: 39px;
+    border-bottom: 1px solid silver;
+}
+.eval_content1_2 ul li:last-child{
+    padding-top: 10px;
+    margin: 0 auto;
+    margin-left: 36px;
+    width: 195px;
+}
+#grade-wrap1{
+    margin-top: 50px;
+    width: 1450px;
+    margin: 0 auto;
+    overflow: auto;
+}
+#grade-insert{
+    margin-top: 50px;
+    width: 1380px;
+    margin-left: 250px;
+}
+#test-wrap{
+    margin-top: 50px;
+    width: 1630px;
+    margin-left: 250px;
+}
+.pscore_content1{ margin: 0 auto; }
+
+.pscore_content1_2 ul li:nth-child(3),
+.pscore_content1_2 ul li:nth-child(4){
+    width: 273px;
+}

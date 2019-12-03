@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans:beans xsi:schemaLocation="http://www.springframework.org/schema/mvc https://www.springframework.org/schema/mvc/spring-mvc.xsd http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd" xmlns:context="http://www.springframework.org/schema/context" xmlns:beans="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.springframework.org/schema/mvc">
+
+<!-- DispatcherServlet Context: defines this servlet's request-processing infrastructure -->
+
+
+<!-- Enables the Spring MVC @Controller programming model -->
+
+
+<annotation-driven/>
+
+<!-- Handles HTTP GET requests for /resources/** by efficiently serving up static resources in the ${webappRoot}/resources directory -->
+
+
+<resources location="/resources/" mapping="/resources/**"/>
+
+<!-- file download order less than internalResourceViewResolver -->
+<beans:bean class="org.springframework.web.servlet.view.BeanNameViewResolver">
+
+<beans:property value="0" name="order"/>
+
+</beans:bean>
+
+<!-- Resolves views selected for rendering by @Controllers to .jsp resources in the /WEB-INF/views directory -->
+
+<beans:bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+
+<beans:property value="/WEB-INF/views/" name="prefix"/>
+
+<beans:property value=".jsp" name="suffix"/>
+
+<beans:property value="1" name="order"/>
+
+</beans:bean>
+
+<context:component-scan base-package="com.human.finalpjt"/>
+<beans:bean class="org.springframework.web.multipart.commons.CommonsMultipartResolver" autowire-candidate="false" id="multipartResolver">
+
+<!-- 업로드 파일의 최대 크기 지정 가능 -->
+<beans:property value="-1" name="maxUploadSize"/>
+
+</beans:bean>
+
+<!-- 파일다운로드 담당하는 뷰클래스 -->
+
+
+<!-- <bean id="downloadView" class="com.ictee.group.common.DownloadView" /> <bean id="zipdownloadView" class="com.ictee.group.common.ZipDownloadView" /> -->
+
+
+<!-- 모든 경로는 지정한 경로명이 붙으므로 해당 경로를 피하기 위해 업로드 파일들을 resources/ 폴더 아래 넣음 -->
+
+
+<!-- <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver"> <property name="prefix" value="/"/> <property name="suffix" value=".jsp"/> <property name="order" value="1"/> </bean> -->
+<beans:bean class="org.springframework.jdbc.datasource.DriverManagerDataSource" name="dataSource">
+
+<beans:property value="oracle.jdbc.driver.OracleDriver" name="driverClassName"/>
+
+<beans:property value="jdbc:oracle:thin:@192.168.0.68:1521:myoracle" name="url"/>
+
+<beans:property value="umin" name="username"/>
+
+<beans:property value="1006" name="password"/>
+
+</beans:bean>
+<beans:bean class="org.mybatis.spring.SqlSessionFactoryBean" id="sqlSessionFactory">
+
+<beans:property name="dataSource" ref="dataSource"/>
+
+<beans:property value="classpath:com/human/finalpjt/dao/mapper/*.xml" name="mapperLocations"/>
+
+</beans:bean>
+<beans:bean class="org.mybatis.spring.SqlSessionTemplate" id="sqlSession">
+
+<beans:constructor-arg ref="sqlSessionFactory" index="0"/>
+
+</beans:bean>
+
+</beans:beans>

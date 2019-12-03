@@ -1,0 +1,116 @@
+table{
+    width: 100%;
+    border-collapse: collapse;
+    margin: -4px 0;
+}
+th{
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+    padding: 5px 0;
+}
+#notice .t_title{ width: 80%; }
+td{ padding: 5px 0; }
+.nav {
+    float: left;
+    width: 1700px;
+    overflow: hidden;
+}
+
+.nav>li {
+    float: left;
+    width: 10%;
+    margin-top: 1.5%;
+    box-sizing: border-box;
+}
+
+.nav>li>a {
+    display: block;
+    width: 100%;
+    text-align: center;
+    line-height: 3.4;
+    font-size: 17px;
+    color:black;
+}
+.nav>li>a:hover{ background-color: #AEC8E5; }
+header {
+    width: 1707px;
+    height: 85px;
+    background-color: #C9D1E8;
+    position: fixed;
+    z-index: 3;
+}
+#board li:first-child ul li{
+    background-color:#D1D3E8;
+}
+#logo1 img{ width: 200px; }
+
+#board-container{ position: relative; }
+
+.container {
+    width: 1200px;
+    height: 50px;
+    position: relative;
+}
+
+/*enroll부분 왼쪽 메뉴*/
+table.type09 {
+    border-collapse: collapse;
+    text-align: center;
+    line-height: 1.5;
+    font-size: 10px;
+    background: #f3f6f7;
+}
+table.type09 thead th {
+    padding: 10px;
+    font-weight: bold;
+    vertical-align: top;
+    color: #369;
+}
+table.type09 tbody th {
+    width: 900px;
+    padding: 10px;
+    font-weight: bold;
+    border-bottom: 1px solid #ccc;
+    background: #f3f6f7;
+}
+table.type09 td {
+    width: 350px;
+    padding: 22px;
+    font-size: 11px;
+    vertical-align: top;
+    border-bottom: 1px solid #ccc;
+    border-top: 2px solid black;
+}
+
+#img11{ margin-top: 15px; }
+#img11 img{
+    width: 200px;
+    margin-left: 75px;
+}
+
+#enroll-title li:first-child ul li,
+#board1 li:first-child ul li,
+#board2 li:first-child ul li,
+#board3 li:first-child ul li,
+#board4 li:first-child ul li{
+    background-color:#D1D3E8;
+}
+
+#tab1{
+    padding: 0px;
+    width: 1677px;
+    margin: 10px;
+}
+.tab-wrap{ margin-top: 95px; }
+
+#info, #grade {
+    width: 82px;
+    height: 34px;
+    margin-left: 2px;
+}
+
+#fi1{
+    width: 1600px;
+    margin-left: -21px;
+    height: auto;
+}

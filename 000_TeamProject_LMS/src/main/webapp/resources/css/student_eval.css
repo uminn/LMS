@@ -1,0 +1,58 @@
+@import url("student.css");
+@import url("button.css");
+@import url("main_menu.css");
+/***********************************/
+#test-wrap{
+    margin-top: 50px;
+    margin-left: 250px;
+    display: inline-block;
+}
+.eval_title1 ul li{
+    float: left;
+    width: 270px;
+}
+.eval_content1_1 ul li{
+    float: left;
+    margin: 0 auto;
+    width: 200px;
+    height: 55px;
+    line-height: 50px;
+    text-align: center;
+    margin-top: 50px;
+}
+.eval_content1_2 ul li{
+    float: left;
+    margin: 0 auto;
+    width: 200px;
+    text-align: center;
+    margin-top: 20px;
+}
+.eval_content1_2 ul li:last-child{
+    padding-top: 10px;
+    margin: 0 auto;
+    /* margin-left: 36px; */
+    width: 195px;
+}
+.eval_content1_1 li:first-child ul li{ background-color:#D1D3E8; }
+.input-field1 {
+    text-align: center;
+    height: 31px;
+    margin-left: 13px;
+    padding-left: 0px;
+}
+#test{
+    width: 110px;
+    padding: 9px;
+    outline: none;
+    background: none;
+    margin-top: 0;
+}
+#change2-content{
+    overflow: auto;
+    width: 100%;
+    height: auto;
+    display: none;
+}
+.cunit{
+	width:150px;
+}

@@ -1,0 +1,78 @@
+@import url('student_main.css');
+/**********************************/
+h1{
+   width:500px;
+   margin: 0 auto;
+   font-size: 48px;
+   text-align: center;
+}
+#searchArea{
+   width: 706px;
+   margin:30px auto;
+   text-align: center;
+}
+#showTable{       /* largest border */
+    width: 920px;
+    margin: 20px auto;
+    text-align: center;
+}
+#showTable li{     /* all td */
+    display: inline-block;
+}
+#thead{         /* header tr */
+   height: 30px;
+}
+#thead li{      /* th */
+    height: 30px;
+    line-height: 30px;
+    text-align:center;
+}
+.time{
+   vertical-align: top;
+    width: 100px;
+    border: 0.5px solid silver;
+    border-right: none;
+    text-align:center;
+    background: #FFD2D3;
+}
+.mon,.tue,.wed,.thu,.fri{
+   vertical-align: top;
+    width: 150px;
+    border: 0.5px solid silver;
+}
+.mon1,.tue1,.wed1,.thu1,.fri1{
+   vertical-align: top;
+    width: 150px;
+    border: 0.5px solid silver;
+    background: #FFD2D3;
+    
+}
+.tbody{
+   height: 120px;
+}
+.tbody li{
+    height: 120px;
+}
+#sctYear{
+    width: 115px;
+    height: 34px;
+    margin-left: 2px;
+    text-align: center;
+}
+#sctSemester{
+    width: 100px;
+    height: 34px;
+    margin-left: 2px;
+    text-align: center;
+}
+#totalNum{
+   width: 100px;
+}
+#btnSearch{
+   width: 70px;
+    height: 35px;
+    border-radius: 0px;
+    padding-left: 0;
+    outline: none;
+    position: relative;
+}

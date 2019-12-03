@@ -1,0 +1,91 @@
+/*공통으로 쓰이는 부분(nav)*/
+*{
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    font-family: '나눔바른고딕', sans-serif;
+}
+body { background: #F3EEF0; }
+.clear{ clear: both; }
+nav {
+    width: 200px;
+    height: 100%;
+    top: 0;
+    float: left;
+    background-color: #C9D1E8;
+    position: fixed;
+    z-index: 1;
+}
+#logo img {
+    width: 173px;
+    height: 150px;
+    margin-left: 16px;
+}
+#logged {
+    margin-bottom: 5px;
+    padding: 22px;
+    background-color: rgb(44, 70, 167);
+}
+#logout{
+    width: 56px;
+    height: 30px;
+    margin-top: 3px;
+    margin-left: 3px;
+    border-radius: 0px;
+}
+.log_title{
+    float: left;
+}
+#welcome {
+    text-align: center;
+    color: white;
+    font-size: 15px;
+}
+.accordion {
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    transition: 0.4s;
+}
+#mainMenu ul {
+    padding: 0 18px;
+    background-color: white;
+    max-height: 0;
+    overflow: hidden;
+    margin-bottom: 0;
+    transition: max-height 0.2s ease-out;
+}
+#mainMenu li {
+    padding-left: 15px;
+    border-bottom: 1px solid rgb(200, 200, 200);
+}
+#mainMenu li a{
+    width: 200px;
+    color: black;
+    line-height: 40px;
+}
+.active, .accordion:hover { background-color: #ccc; }
+.accordion:after {
+    content: '\002B';
+    color: #777;
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+}
+.accordion-x::after{ content: none; }
+.active:after { content: "\2212"; }
+
+#main{
+    border-bottom: 5px solid rgb(33,164, 220);
+    height: 150px;
+}
+section{ 
+    margin-left: 200px; 
+}
